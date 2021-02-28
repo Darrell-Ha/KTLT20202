@@ -1,6 +1,7 @@
 #include <iostream>
 #include <math.h>
 using namespace std;            /// Không gian C z=a+bi =>> [z]=(a,b) thuộc R^2;
+const float pi = 3.141593;
 float heSo_Delta_no[6][2];      ///3 dòng đầu lưu hệ số a,b,c ///2 dòng sau lưu no1,no2/// dòng cuối lưu Delta
 float tvhuong(int x, int y);    ////tính tích vô hướng vecto <x,y> vì không gian C thực chất cũng là R^2;
 float nhanReal(int x,int y);    /// tính phần thực của x*y
@@ -43,10 +44,16 @@ int main(){
             heSo_Delta_no[4][1]=heSo_Delta_no[3][1];
         }else{
             float moduleDelta=sqrt(heSo_Delta_no[5][0]*heSo_Delta_no[5][0]+heSo_Delta_no[5][1]*heSo_Delta_no[5][1]);        ////tính căn Delta
-            float arcosDelta=acos(heSo_Delta_no[5][0]/moduleDelta);
+            float cosDelta=heSo_Delta_no[5][0]/moduleDelta;
+            float arcosDelta=acos(cosDelta);
+            if(cosDelta<0 && heSo_Delta_no[5][1]<0){
+                arcosDelta=-arcosDelta;
+            }
             float cosCanDelta=cos(arcosDelta/2);                 /// tính cos của số căn Delta
             float sinCanDelta=sin(arcosDelta/2);                  /// tính sin của số căn Delta
+            
             float moduleCanDelta=sqrt(moduleDelta);                          /// tính modun số căn Delta
+                        
 
             heSo_Delta_no[5][0]=moduleCanDelta*cosCanDelta;
             heSo_Delta_no[5][1]=moduleCanDelta*sinCanDelta;
