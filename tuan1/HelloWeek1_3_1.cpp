@@ -6,7 +6,7 @@ float heSo_Delta_no[6][2];      ///3 dòng đầu lưu hệ số a,b,c ///2 dòn
 float tvhuong(int x, int y);    ////tính tích vô hướng vecto <x,y> vì không gian C thực chất cũng là R^2;
 float nhanReal(int x,int y);    /// tính phần thực của x*y
 float nhanImg(int x,int y);     /// tính phần ảo của x*y
-float chiaReal(int x,int y);    /// tính phần thức của x/y
+float chiaReal(int x,int y);    /// tính phần thực của x/y
 float chiaImg(int x, int y);    /// tính phần ảo của x/y
 void vietNghiem(int x);
 int main(){      
@@ -43,7 +43,8 @@ int main(){
             heSo_Delta_no[4][0]=heSo_Delta_no[3][0];
             heSo_Delta_no[4][1]=heSo_Delta_no[3][1];
         }else{
-            float moduleDelta=sqrt(heSo_Delta_no[5][0]*heSo_Delta_no[5][0]+heSo_Delta_no[5][1]*heSo_Delta_no[5][1]);        ////tính căn Delta
+            ////tính căn Delta/////
+            float moduleDelta=sqrt(heSo_Delta_no[5][0]*heSo_Delta_no[5][0]+heSo_Delta_no[5][1]*heSo_Delta_no[5][1]);        
             float cosDelta=heSo_Delta_no[5][0]/moduleDelta;
             float arcosDelta=acos(cosDelta);
             if(cosDelta<0 && heSo_Delta_no[5][1]<0){
