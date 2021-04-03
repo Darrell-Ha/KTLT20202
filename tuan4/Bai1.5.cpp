@@ -14,7 +14,6 @@ void printMatrix(matrix a);
 matrix writeMatrix(matrix a);
 void progr3();
 void progr4();
-
 int main(){
     int status = 0;
     do{
