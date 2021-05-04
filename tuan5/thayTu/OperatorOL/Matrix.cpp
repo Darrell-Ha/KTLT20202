@@ -6,7 +6,6 @@
 
 #define Mac_randomIN(a,b) rand()%(b-a+1)+a
 using namespace std;
-
 class Matrix {
     private:
         string nameMatrix;
@@ -59,9 +58,9 @@ class Matrix {
             os << a.nameMatrix << " = ";
             if(a.row-1!=0){
                 for(int i=0; i<a.row; i++){
-                    os << "\n\t";
+                    os << "\n\t|";
                     for(int j=0; j<a.column;j++){
-                        os << a.arr[i][j]<<" " <<setw(3);
+                        os << setw(6)<<a.arr[i][j]<< "|" ;
                     }
                 }
             }else{
